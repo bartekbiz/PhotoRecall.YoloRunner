@@ -1,0 +1,7 @@
+services:
+  yolo8:
+    image: yolo8_runner
+    container_name: yolo8
+    restart: unless-stopped
+    ports:
+      - 8008:8000

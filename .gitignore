@@ -1,0 +1,22 @@
+# MacOS files
+*.DS_Store
+
+# JetBrains files
+.idea/
+
+# VS Code files
+.vscode
+
+# Python virtual env
+.venv/
+__pycache__/
+
+# Build dir
+bin/
+obj/
+build/
+dist/
+
+# Data and Models dirs
+data/
+models/
