@@ -1,9 +1,10 @@
 import json
 
+from yolo_runner_base.yolo_runner.yolo_runner import YoloRunner
 from ultralytics import YOLO
 
 
-class Yolo8Runner(YoloRunner.YoloRunner):
+class Yolo8Runner(YoloRunner):
     def __init__(self):
         super().__init__()
         self.model = YOLO("models/yolov8n.pt")
