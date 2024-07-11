@@ -4,10 +4,10 @@ from yolo_runner_base.yolo_runner.yolo_runner import YoloRunner
 from ultralytics import YOLO
 
 
-class Yolo8Runner(YoloRunner):
-    def __init__(self):
+class YoloLatestRunner(YoloRunner):
+    def __init__(self, model_name: str):
         super().__init__()
-        self.model = YOLO("models/yolov8n.pt")
+        self.model = YOLO(f"models/{model_name}")
 
     def predict(self, photo_url: str):
         self.logger.warning(photo_url)

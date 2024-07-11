@@ -1,7 +1,7 @@
 FROM python:3.12-bookworm
 
 # set variables
-ARG dir=yolo8_runner
+ARG dir=yolo_latest_runner
 
 # update packages
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
