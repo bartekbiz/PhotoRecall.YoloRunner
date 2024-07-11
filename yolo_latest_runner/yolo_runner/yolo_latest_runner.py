@@ -10,7 +10,6 @@ class YoloLatestRunner(YoloRunner):
         self.model = YOLO(f"models/{model_name}")
 
     def predict(self, photo_url: str):
-        self.logger.warning(photo_url)
         prediction = self.model(photo_url)
 
         prediction_json = prediction[0].tojson()
