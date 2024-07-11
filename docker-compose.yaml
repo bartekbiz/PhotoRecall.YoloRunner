@@ -5,3 +5,10 @@ services:
     restart: unless-stopped
     ports:
       - 8000:8000
+
+  yolo_7_runner:
+    image: photorecall-yolo_7_runner
+    container_name: yolo_7_runner
+    restart: unless-stopped
+    ports:
+      - 8001:8000
