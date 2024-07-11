@@ -23,7 +23,7 @@ COPY pyproject.toml .
 
 RUN pip install -e .
 
-# install yolo8
+# install ultralytics
 RUN pip install ultralytics
 
 # copy all files and set final working dir
