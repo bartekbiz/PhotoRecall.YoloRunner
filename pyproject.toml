@@ -1,5 +1,5 @@
 [project]
-name = "yolo_runner"
+name = "yolo_runner_base"
 version = "0.1"
 description = "Project for running multiple YOLO versions as docker containers with http communication."
 
