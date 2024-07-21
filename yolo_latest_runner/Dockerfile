@@ -19,15 +19,15 @@ COPY requirements_common.txt .
 
 RUN pip install --no-cache-dir -r requirements_common.txt
 
+# install ultralytics
+RUN pip install --no-cache-dir ultralytics
+
 # intstall yolo_runner_base
 COPY yolo_runner_base yolo_runner_base
 
 COPY pyproject.toml .
 
 RUN pip install --no-cache-dir -e .
-
-# install ultralytics
-RUN pip install --no-cache-dir ultralytics
 
 # copy yolo_runner files and set final working dir
 COPY $dir $dir
