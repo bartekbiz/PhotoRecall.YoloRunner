@@ -1,4 +1,4 @@
-FROM python:3.7-bookworm
+FROM python:3.10-bookworm
 
 # set variables
 ARG dir=yolo_7_runner
@@ -19,13 +19,6 @@ COPY requirements_common.txt .
 
 RUN pip install --no-cache-dir -r requirements_common.txt
 
-# intstall yolo_runner_base
-COPY yolo_runner_base yolo_runner_base
-
-COPY pyproject.toml .
-
-RUN pip install --no-cache-dir -e .
-
 # install yolov7
 ARG yolo_dir=$dir/yolov7
 
@@ -34,6 +27,13 @@ RUN mkdir -p $yolo_dir
 RUN git clone https://github.com/WongKinYiu/yolov7.git $yolo_dir
 
 RUN pip install --no-cache-dir -r $yolo_dir/requirements.txt
+
+# intstall yolo_runner_base
+COPY yolo_runner_base yolo_runner_base
+
+COPY pyproject.toml .
+
+RUN pip install --no-cache-dir -e .
 
 # copy yolo_runner files and set final working dir
 COPY $dir $dir
