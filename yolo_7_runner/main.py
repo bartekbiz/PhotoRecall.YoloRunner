@@ -8,4 +8,4 @@ app = FastAPI(swagger_ui_parameters={"syntaxHighlight": True, "tryItOutEnabled":
 @app.get("/predict")
 def predict(photo_url: str):
     yolo_runner = Yolo7Runner()
-    return yolo_runner.predict(photo_url)
+    return yolo_runner.predict_from_url(photo_url)
