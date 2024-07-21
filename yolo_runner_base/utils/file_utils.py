@@ -14,7 +14,7 @@ class FileUtils:
         """
         get_response = requests.get(url, stream=True)
 
-        save_path = f"{self.data_dir_path}{url.split("/")[-1]}"
+        save_path = os.path.join(self.data_dir_path, url.split("/")[-1])
 
         with open(save_path, 'wb') as f:
             for chunk in get_response.iter_content(chunk_size=1024):
