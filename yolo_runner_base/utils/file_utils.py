@@ -27,5 +27,12 @@ class FileUtils:
         """
         Clears content of data directory.
         """
-        shutil.rmtree(self.data_dir_path)
-        os.mkdir(self.data_dir_path)
+        self.clear_dir(self.data_dir_path)
+
+    @staticmethod
+    def clear_dir(path):
+        """
+        Clears content of given directory.
+        """
+        shutil.rmtree(path)
+        os.mkdir(path)
