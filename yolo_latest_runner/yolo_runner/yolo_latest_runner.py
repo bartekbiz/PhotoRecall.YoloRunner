@@ -8,9 +8,11 @@ from ultralytics import YOLO
 class YoloLatestRunner(YoloRunner):
     def __init__(self, model_name: str):
         super().__init__()
+
+        self.model_name = model_name
         self.model = YOLO(f"models/{model_name}")
 
-    def predict_from_url(self, photo_url: str):
+    def predict(self, photo_url: str):
         photo_path = self.file_utils.download(photo_url)
 
         prediction = self.model(photo_path)
