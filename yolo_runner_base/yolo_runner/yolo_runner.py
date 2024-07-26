@@ -11,7 +11,7 @@ class YoloRunner(ABC):
         self.file_utils = FileUtils()
 
     @abstractmethod
-    def predict_from_url(self, photo_url: str):
+    def predict(self, photo_url: str):
         """
         Runs prediction for photo given as url.
         :param photo_url:
