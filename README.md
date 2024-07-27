@@ -58,6 +58,6 @@ The prediction results will be returned in JSON format as follows:
 ]
 ```
 
-# License
+## License
 GNU General Public License v3.0 or later.
 See LICENSE to see the full text.
