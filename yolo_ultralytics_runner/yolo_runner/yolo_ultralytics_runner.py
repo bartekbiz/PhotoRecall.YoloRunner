@@ -5,7 +5,7 @@ from yolo_runner_base.yolo_runner.yolo_runner import YoloRunner
 from ultralytics import YOLO
 
 
-class YoloLatestRunner(YoloRunner):
+class YoloUltralyticsRunner(YoloRunner):
     def __init__(self, model_name: str):
         super().__init__()
 

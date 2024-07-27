@@ -1,7 +1,7 @@
 services:
-  yolo_latest_runner:
-    image: photorecall-yolo_latest_runner
-    container_name: yolo_latest_runner
+  yolo_ultralytics_runner:
+    image: photorecall-yolo_ultralytics_runner
+    container_name: yolo_ultralytics_runner
     restart: unless-stopped
     ports:
       - 8001:8000

@@ -1,7 +1,7 @@
 FROM python:3.12-bookworm
 
 # set variables
-ARG dir=yolo_latest_runner
+ARG dir=yolo_ultralytics_runner
 
 # update packages
 RUN apt-get update && apt-get upgrade -y
