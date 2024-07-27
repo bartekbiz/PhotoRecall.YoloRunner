@@ -2,6 +2,8 @@ import subprocess
 
 from yolo_runner_base.yolo_runner.yolo_runner import YoloRunner
 from yolo_runner_base.utils.txt_results_reader import TxtResultsReader
+from yolo_runner_base.utils.results_formatter import ResultsFormatter
+from yolo_runner_base.utils.box_translators.from_central_box_translator import FromCentralBoxTranslator
 
 
 class Yolo7Runner(YoloRunner):
@@ -19,13 +21,8 @@ class Yolo7Runner(YoloRunner):
 
         self.__run_yolov7_detect_script(photo_path)
 
-        photo_width, photo_height = self.file_utils.get_photo_width_height(photo_path)
-
-        results = self.txt_results_reader.get_results(
-            self.file_utils.get_txt_name(photo_path),
-            photo_width,
-            photo_height
-        )
+        results = self.txt_results_reader.get_results(self.file_utils.get_txt_name(photo_path))
+        results = self.__format_results(results, photo_path)
 
         self.file_utils.clear_data_dir()
         self.file_utils.clear_dir(self.runs_path)
@@ -40,3 +37,15 @@ class Yolo7Runner(YoloRunner):
 
         process = subprocess.Popen('/bin/bash', stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
         process.communicate(commands)
+
+    def __format_results(self, results, photo_path):
+        photo_width, photo_height = self.file_utils.get_photo_width_height(photo_path)
+        box_translator = FromCentralBoxTranslator()
+
+        results_formatter = ResultsFormatter(
+            photo_width=photo_width,
+            photo_height=photo_height,
+            box_translator=box_translator
+        )
+
+        return results_formatter.format(results)
