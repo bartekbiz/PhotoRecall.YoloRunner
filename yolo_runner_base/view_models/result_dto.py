@@ -7,10 +7,10 @@ class ResultDTO:
         self.name: str = self.__get_class_name()
         self.confidence: float = float(confidence)
         self.box: dict = {
-            "x1": float(x1),
-            "y1": float(y1),
-            "x2": float(x2),
-            "y2": float(y2)
+            "x1": x1,
+            "y1": y1,
+            "x2": x2,
+            "y2": y2
         }
 
     def __get_class_name(self) -> str:
