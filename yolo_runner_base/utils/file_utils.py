@@ -1,6 +1,7 @@
 import os
 import shutil
 import requests
+import imagesize
 
 
 class FileUtils:
@@ -36,3 +37,11 @@ class FileUtils:
         """
         shutil.rmtree(path)
         os.mkdir(path)
+
+    @staticmethod
+    def get_txt_name_from_photo_path(photo_path):
+        return photo_path.split("/")[-1].split(".")[0] + ".txt"
+
+    @staticmethod
+    def get_photo_width_height(photo_path):
+        return imagesize.get(photo_path)
