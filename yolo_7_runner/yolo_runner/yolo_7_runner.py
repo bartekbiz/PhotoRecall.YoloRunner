@@ -22,7 +22,7 @@ class Yolo7Runner(YoloRunner):
         photo_width, photo_height = self.file_utils.get_photo_width_height(photo_path)
 
         results = self.txt_results_reader.get_results(
-            self.file_utils.get_txt_name_from_photo_path(photo_path),
+            self.file_utils.get_txt_name(photo_path),
             photo_width,
             photo_height
         )

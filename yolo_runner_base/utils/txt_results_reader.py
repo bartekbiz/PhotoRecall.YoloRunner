@@ -9,6 +9,9 @@ class TxtResultsReader:
         self.separator = separator
 
     def get_results(self, file_name, photo_width=1, photo_height=1):
+        """
+        Extracts results from given txt file and formats them as ResultDTO.
+        """
         return self.__format_results(self.__load_txt(file_name), photo_width, photo_height)
 
     def __load_txt(self, file_name) -> list:

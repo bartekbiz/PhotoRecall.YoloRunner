@@ -10,7 +10,6 @@ class FileUtils:
     def download(self, url: str) -> str:
         """
         Downloads file given in url.
-        :param url:
         :return: Returns path to saved file.
         """
         get_response = requests.get(url, stream=True)
@@ -39,9 +38,15 @@ class FileUtils:
         os.mkdir(path)
 
     @staticmethod
-    def get_txt_name_from_photo_path(photo_path):
+    def get_txt_name(photo_path):
+        """
+        Extracts photo name from photo_path and adds ".txt".
+        """
         return photo_path.split("/")[-1].split(".")[0] + ".txt"
 
     @staticmethod
     def get_photo_width_height(photo_path):
+        """
+        Gets width and height of given photo.
+        """
         return imagesize.get(photo_path)
