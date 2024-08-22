@@ -21,8 +21,10 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build Docker image
-      run: docker build . --file yolo_7_runner/Dockerfile --tag yolo_7_runner:latest
-      
-    - name: Push Docker image
-      run: docker push bartekbiz/yolo_7_runner:latest
+    - name: Build and push Docker image
+      uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+      with:
+        context: .
+        file: ./yolo_7_runner/Dockerfile
+        push: true
+        tags: latest
