@@ -1,4 +1,4 @@
-name: build-push-yolo_7_runner
+name: build-and-push-yolo_7_runner
 
 on:
   push:
@@ -22,9 +22,9 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and push Docker image
-      uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+      uses: docker/build-push-action@v3
       with:
         context: .
         file: ./yolo_7_runner/Dockerfile
         push: true
-        tags: yolo_7_runner:latest
+        tags: bartekbiz/yolo_7_runner:latest
