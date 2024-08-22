@@ -16,16 +16,17 @@ To run the YoloRunner containers, you need to have [Docker](https://www.docker.c
     cd PhotoRecall.YoloRunner
     ```
 
-2. Build the Docker images:
-    ```sh
-    docker build --tag 'photorecall-yolo_ultralytics_runner' -f yolo_ultralytics_runner/Dockerfile .
-    docker build --tag 'photorecall-yolo_7_runner' -f yolo_7_runner/Dockerfile .
-    ```
-
-3. Start the containers using Docker Compose:
+2. Start the containers using Docker Compose:
     ```sh
     docker compose up -d
     ```
+
+## Building Docker images
+You can build the Docker images yourself.
+```sh
+docker build --tag 'photorecall-yolo_ultralytics_runner' -f yolo_ultralytics_runner/Dockerfile .
+docker build --tag 'photorecall-yolo_7_runner' -f yolo_7_runner/Dockerfile .
+```
 
 ## Getting Predictions
 To get predictions from the YoloRunner containers, you can make HTTP requests to the respective endpoints:
