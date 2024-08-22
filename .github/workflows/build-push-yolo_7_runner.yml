@@ -27,4 +27,4 @@ jobs:
         context: .
         file: ./yolo_7_runner/Dockerfile
         push: true
-        tags: latest
+        tags: yolo_7_runner:latest
