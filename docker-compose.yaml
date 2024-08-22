@@ -1,13 +1,13 @@
 services:
   yolo_ultralytics_runner:
-    image: photorecall-yolo_ultralytics_runner
+    image: bartekbiz/yolo_ultralytics_runner:latest
     container_name: yolo_ultralytics_runner
     restart: unless-stopped
     ports:
       - 8001:8000
 
   yolo_7_runner:
-    image: photorecall-yolo_7_runner
+    image: bartekbiz/yolo_7_runner:latest
     container_name: yolo_7_runner
     restart: unless-stopped
     ports:
