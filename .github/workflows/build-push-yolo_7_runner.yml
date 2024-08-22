@@ -1,0 +1,19 @@
+name: build-push-yolo_7_runner
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Docker image
+      run: docker build . --file yolo_7_runner/Dockerfile --tag yolo_7_runner:latest
+    - name: Push Docker image
+      run: docker push bartekbiz/yolo_7_runner:latest
