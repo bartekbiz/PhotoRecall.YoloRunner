@@ -1,3 +1,5 @@
+[![build-and-push-yolo_7_runner](https://github.com/bartekbiz/PhotoRecall.YoloRunner/actions/workflows/build-and-push-yolo_7_runner.yml/badge.svg?branch=main)](https://github.com/bartekbiz/PhotoRecall.YoloRunner/actions/workflows/build-and-push-yolo_7_runner.yml)
+[![build-and-push-yolo_ultralytics_runner](https://github.com/bartekbiz/PhotoRecall.YoloRunner/actions/workflows/build-and-push-yolo_ultralytics_runner.yml/badge.svg)](https://github.com/bartekbiz/PhotoRecall.YoloRunner/actions/workflows/build-and-push-yolo_ultralytics_runner.yml)
 # PhotoRecall.YoloRunner
 
 ## Project Overview
