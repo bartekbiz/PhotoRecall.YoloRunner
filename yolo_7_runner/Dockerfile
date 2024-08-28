@@ -20,13 +20,13 @@ COPY requirements_common.txt .
 RUN pip install --no-cache-dir -r requirements_common.txt
 
 # install yolov7
-ARG yolo_dir=$dir/yolov7
+ARG yolo_dir=yolov7
 
-RUN mkdir -p $yolo_dir
+RUN mkdir -p $dir/$yolo_dir
 
-RUN git clone https://github.com/WongKinYiu/yolov7.git $yolo_dir
+RUN git clone https://github.com/WongKinYiu/yolov7.git $dir/$yolo_dir
 
-RUN pip install --no-cache-dir -r $yolo_dir/requirements.txt
+RUN pip install --no-cache-dir -r $dir/$yolo_dir/requirements.txt
 
 # intstall yolo_runner_base
 COPY yolo_runner_base yolo_runner_base
@@ -39,5 +39,7 @@ RUN pip install --no-cache-dir -e .
 COPY $dir $dir
 
 WORKDIR /usr/src/app/$dir
+
+RUN mkdir -p $yolo_dir/data
 
 CMD ["fastapi", "run", "main.py", "--port", "8000"]

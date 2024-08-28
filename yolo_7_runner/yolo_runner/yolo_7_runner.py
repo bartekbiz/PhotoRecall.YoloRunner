@@ -12,19 +12,20 @@ class Yolo7Runner(YoloRunner):
 
         self.model_name = model_name
 
+        self.data_path = "yolov7/data"
         self.runs_path = "yolov7/runs"
 
         self.txt_results_reader = TxtResultsReader("yolov7/runs/detect/exp/labels")
 
     def predict(self, photo_url: str):
-        photo_path = self.file_utils.download(photo_url)
+        photo_path = self.file_utils.download(photo_url, self.data_path)
 
         self.__run_yolov7_detect_script(photo_path)
 
         results = self.txt_results_reader.get_results(self.file_utils.get_txt_name(photo_path))
         results = self.__format_results(results, photo_path)
 
-        self.file_utils.clear_data_dir()
+        self.file_utils.clear_dir(self.data_path)
         self.file_utils.clear_dir(self.runs_path)
 
         return results
