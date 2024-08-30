@@ -11,6 +11,8 @@ class FileUtils:
         Downloads file given in url.
         :return: Returns path to saved file.
         """
+        os.makedirs(path, exist_ok=True)
+
         get_response = requests.get(url, stream=True)
 
         save_path = os.path.join(path, url.split("/")[-1])
@@ -28,7 +30,7 @@ class FileUtils:
         Clears content of given directory.
         """
         shutil.rmtree(path)
-        os.mkdir(path)
+        os.makedirs(path, exist_ok=True)
 
     @staticmethod
     def get_txt_name(photo_path):

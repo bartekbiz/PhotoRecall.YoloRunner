@@ -34,6 +34,4 @@ COPY $dir $dir
 
 WORKDIR /usr/src/app/$dir
 
-RUN mkdir -p data
-
 CMD ["fastapi", "run", "main.py", "--port", "8000"]

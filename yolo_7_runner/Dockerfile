@@ -40,6 +40,4 @@ COPY $dir $dir
 
 WORKDIR /usr/src/app/$dir
 
-RUN mkdir -p $yolo_dir/data
-
 CMD ["fastapi", "run", "main.py", "--port", "8000"]
