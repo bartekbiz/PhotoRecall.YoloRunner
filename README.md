@@ -43,7 +43,7 @@ curl -X 'GET' \
 Example for the `yolo_7_runner`:
 ```sh
 curl -X 'GET' \
-  'http://localhost:8001/predict?photo_url=https%3A%2F%2Fultralytics.com%2Fimages%2Fbus.jpg&model_name=yolov7.pt' \
+  'http://localhost:8002/predict?photo_url=https%3A%2F%2Fultralytics.com%2Fimages%2Fbus.jpg&model_name=yolov7.pt' \
   -H 'accept: application/json'
 ```
 
