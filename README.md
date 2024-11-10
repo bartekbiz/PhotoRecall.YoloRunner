@@ -33,14 +33,18 @@ docker build --tag 'photorecall-yolo_7_runner' -f yolo_7_runner/Dockerfile .
 ## Getting Predictions
 To get predictions from the YoloRunner containers, you can make HTTP requests to the respective endpoints:
 
-For the `yolo_ultralytics_runner`:
-```
-http://localhost:8001/predict?photo_url=https://ultralytics.com/images/bus.jpg
+Example for the `yolo_ultralytics_runner`:
+```sh
+curl -X 'GET' \
+  'http://localhost:8001/predict?photo_url=https%3A%2F%2Fultralytics.com%2Fimages%2Fbus.jpg&model_name=yolov10n.pt' \
+  -H 'accept: application/json'
 ```
 
-For the `yolo_7_runner`:
-```
-http://localhost:8002/predict?photo_url=https://ultralytics.com/images/bus.jpg
+Example for the `yolo_7_runner`:
+```sh
+curl -X 'GET' \
+  'http://localhost:8001/predict?photo_url=https%3A%2F%2Fultralytics.com%2Fimages%2Fbus.jpg&model_name=yolov7.pt' \
+  -H 'accept: application/json'
 ```
 
 ## Reading Results
