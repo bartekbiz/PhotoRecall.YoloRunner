@@ -1,4 +1,4 @@
-name: build-and-push-yolo_7_runner
+name: build-main-yolo_7_runner
 
 on:
   push:
