@@ -1,10 +1,10 @@
-name: build-and-push-yolo_7_runner
+name: build-dev-yolo_ultralytics_runner
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev" ]
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,6 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: .
-        file: ./yolo_7_runner/Dockerfile
+        file: ./yolo_ultralytics_runner/Dockerfile
         push: true
-        tags: bartekbiz/yolo_7_runner:latest
+        tags: bartekbiz/yolo_ultralytics_runner:dev
