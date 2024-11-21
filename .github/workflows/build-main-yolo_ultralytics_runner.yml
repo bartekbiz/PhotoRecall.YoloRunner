@@ -1,4 +1,4 @@
-name: build-and-push-yolo_ultralytics_runner
+name: build-main-yolo_ultralytics_runner
 
 on:
   push:
